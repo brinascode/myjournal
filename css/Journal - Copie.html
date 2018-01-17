@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Journal</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+
+
+
+
+<body style="visibility:hidden;">
+
+<header>  My journal! </header>
+
+
+<section id="date"></section>
+<section ><input type="text" id="title">  </input> </section>
+<section ><input type="text" id="entry">  </input></section>
+<button id="save"></button>
+
+<ul id="postList"></ul>
+
+
+
+
+
+
+
+<script>
+var password="LOVE";
+var key=prompt("Please enter the password");
+var body= document.getElementsByTagName("body")[0];
+var date= document.getElementById("date")
+var title= document.getElementById("title")
+var entry= document.getElementById("entry")
+var save= document.getElementById("save")
+var postList= document.getElementById("postList")
+//Identification
+if(key.toUpperCase() === password){
+alert("Correct code. Welcome :)")
+body.style.visibility="";
+}
+else{
+body.innerHTML = "Access Denied"
+}
+
+//Creating a journal entry:
+//Store date, store title, store text(entry) all in variable, then you save, creates link to the journal entry
+//All variables get defined after save
+//Make journalEntry object
+
+function journalPost(date,title,entry){
+this.date=date;
+this.title=title;
+this.text=entry;
+}
+//1 Setting up journalPost methods
+journalPost.prototype.addDate = function(){
+this.date =new Date().toJSON().slice(0,10);
+}
+journalPost.prototype.addTitle = function(title){
+this.title = title;
+}
+journalPost.prototype.addEntry=function(entry){
+this.entry=entry;
+
+}
+
+var currentPost = new journalPost(); //Current should get empty after journal entry is saved
+date.innerHTML = currentPost.addDate();
+
+save.addEventListener("click",function(){
+var currentTitle,currentEntry
+currentTitle = title.value;
+currentEntry=entry.value;
+currentPost.addTitle(currentTitle)
+currentPost.addEntry(currentEntry)
+
+// Problem here :localStorage.currentPost.title = currentPost;
+
+alert("Your post name is: "+currentPost.title+ " with this content: "+currentPost.entry)
+var li= document.createElement("li");
+li.innerHTML = currentPost.title;
+postList.appendChild(li)
+},false)
+
+
+
+function authen(){
+
+var Users = localStorage.Users
+var loadUsers
+
+//Placing the boxes in place for login and signup
+result.appendChild(authenBox);
+
+//Two options from now on: user logs in or creates account
+//If there's a match, it launches account == so make a new function for that, if no match, asks them to try again(can do that later)
+//Users[i]["userName"].toUpperCase()===userNameBox.value.toUpperCase() && Users[i].password.toUpperCase()=== passWordBox.value.toUpperCase()
+//What happens when you click on login
+loginButton.addEventListener("click",function(){
+
+	if(userNameBox.value && passWordBox.value){
+loadUsers = JSON.parse(Users) //You reload the object as an actual Object
+
+	for(var i in loadUsers){
+if(userNameBox.value.toUpperCase() === loadUsers[i].userName.toUpperCase() && passWordBox.value.toUpperCase() === loadUsers[i].password.toUpperCase() ){
+alert("Match"); 
+loadAccountPage();
+//Load function to open your private page
+}
+else{
+alert("Wrong user name and/or password, please try again."); //Make sure this only pops up like once... its coming for the other users too...Authen at login should fix this
+}
+
+}
+
+}
+else{
+alert("Wrong username and password combination, or you didn't write anything.")
+
+}
+},false)
+
+//When you click on Sign Up:
+signUpButton.addEventListener("click",function(){
+var createUserNameBox = document.createElement("input");
+var createPasswordBox = document.createElement("input");
+createUserNameBox.className="prettyinput";
+createPasswordBox.className="prettyinput";
+
+var signUpBox = document.createElement("div")
+signUpBox.appendChild(createUserNameBox);
+signUpBox.appendChild(createPasswordBox);
+result.appendChild(signUpBox)
+
+//The Submit Account button is now available! :)
+var submitAccount = document.createElement("button");
+submitAccount.innerHTML = "Create my account!";
+submitAccount.className="prettybutton"
+result.appendChild(submitAccount)
+
+//What happens when you Submit account: Hot stuff!
+
+submitAccount.addEventListener("click",function(){
+
+if(createUserNameBox.value && createPasswordBox.value){
+loadUsers = JSON.parse(Users)
+var countUsers = 1; var make;
+for(var i in loadUsers){
+if(loadUsers[i].userName.toUpperCase()!= createUserNameBox.value.toUpperCase() && loadUsers[i].password.toUpperCase() != createPasswordBox.value.toUpperCase()){
+alert("This combi is available")
+make=true;
+countUsers+=1;
+}
+else{
+alert("This combination is already taken. Please change either your username or password") //Got to fix something here
+}
+}
+if(make){
+loadUsers["User"+countUsers] = {};
+loadUsers["User"+countUsers].userName = createUserNameBox.value;
+loadUsers["User"+countUsers].password = createPasswordBox.value;
+
+alert(loadUsers["User"+countUsers].userName + loadUsers["User"+countUsers].password )
+localStorage.Users = JSON.stringify(loadUsers);
+Users=localStorage.Users;
+alert(localStorage.Users)
+loadAccountPage();
+//Here is where you launch your account!
+}
+}
+else{alert("You did not type in anything. Please do that.")}
+
+
+
+
+},false)
+
+},false)
+
+}
+
+authen();
+
+
+
+</script>
+
+
+</body>
+</html>

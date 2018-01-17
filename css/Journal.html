@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Journal</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+
+
+
+
+<body style="visibility:hidden;">
+
+<header>  My journal! </header>
+
+
+<section id="date"></section>
+<section ><input type="text" id="title">  </input> </section>
+<section ><input type="text" id="entry">  </input></section>
+<button id="save">Save here</button>
+
+<ul id="postList"></ul>
+
+
+
+
+
+
+
+<script>
+
+var body= document.getElementsByTagName("body")[0];
+var date= document.getElementById("date")
+var title= document.getElementById("title")
+var entry= document.getElementById("entry")
+var save= document.getElementById("save")
+var postList= document.getElementById("postList")
+//Identification
+body.style.visibility="";
+//Creating a journal entry:
+//Store date, store title, store text(entry) all in variable, then you save, creates link to the journal entry
+//All variables get defined after save
+//Make journalEntry object
+
+function journalPost(date,title,entry){
+this.date=date;
+this.title=title;
+this.text=entry;
+}
+//1 Setting up journalPost methods
+journalPost.prototype.addDate = function(){
+this.date =new Date().toJSON().slice(0,10);
+}
+journalPost.prototype.addTitle = function(title){
+this.title = title;
+}
+journalPost.prototype.addEntry=function(entry){
+this.entry=entry;
+
+}
+
+var currentPost = new journalPost(); //Current should get empty after journal entry is saved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+date.innerHTML = currentPost.addDate();
+
+save.addEventListener("click",function(){
+var currentTitle,currentEntry
+currentTitle = title.value;
+currentEntry=entry.value;
+currentPost.addTitle(currentTitle)
+currentPost.addEntry(currentEntry)
+
+// Problem here :localStorage.currentPost.title = currentPost;
+
+alert("Your post name is: "+currentPost.title+ " with this content: "+currentPost.entry)
+var li= document.createElement("li");
+li.innerHTML = currentPost.title;
+postList.appendChild(li)
+},false)
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
