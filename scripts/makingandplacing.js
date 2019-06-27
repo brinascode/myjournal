@@ -21,10 +21,14 @@ else{backscount=0}
 //Users are saved in namespaces.
 
 //Making boxes and fields
+
+//This is where everything ultimately gets appended to:
 var result = document.getElementById("result")
+
 var userNameBox = document.createElement("input");
 userNameBox.className="prettyinput";
 
+//Icons
 var loginIcon = document.createElement("img")
 loginIcon.src = "./pics/loginicon.png";
 loginIcon.style.width=19+"%"

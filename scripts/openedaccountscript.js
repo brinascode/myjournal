@@ -19,7 +19,7 @@ var entry= document.getElementById("entry");
 var save= document.getElementById("save");
 var postList=document.getElementById("postList");
 var postreader= document.getElementById("postreader");
-var postBeingRead
+var postBeingRead;
 var modifyButton = document.createElement("button")
     modifyButton.innerHTML = "Modify";
 var saveModif = document.createElement("button");

@@ -3,70 +3,95 @@
 <html>
 
 	<head> 
-	<meta charset="utf-8" />
+		<meta charset="utf-8" />
 
-	<!-- Stylesheets -->
-		<link href="./booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
-	    <link rel="stylesheet" href="./css/Accountpage.css" />
-		<link rel="stylesheet" href="./css/html5reset.css" media="all">
-		<link rel="stylesheet" href="./css/col.css" media="all">
-		<link rel="stylesheet" href="./css/2cols.css" media="all">
-		<link rel="stylesheet" href="./css/3cols.css" media="all">
-		<link rel="stylesheet" href="./css/4cols.css" media="all">
-		<link rel="stylesheet" href="./css/5cols.css" media="all">
-		<link rel="stylesheet" href="./css/6cols.css" media="all">
-		<link rel="stylesheet" href="./css/7cols.css" media="all">
-		<link rel="stylesheet" href="./css/8cols.css" media="all">
-		<link rel="stylesheet" href="./css/9cols.css" media="all">
-		<link rel="stylesheet" href="../css/10cols.css" media="all">
-		<link rel="stylesheet" href="./css/11cols.css" media="all">
-		<link rel="stylesheet" href="./css/12cols.css" media="all">
+		<!-- Stylesheets -->
+			<link href="./booklet/jquery.booklet.latest.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+			<link rel="stylesheet" href="./css/Accountpage.css" />
+			<link rel="stylesheet" href="./css/html5reset.css" media="all">
+			<link rel="stylesheet" href="./css/col.css" media="all">
+			<link rel="stylesheet" href="./css/2cols.css" media="all">
+			<link rel="stylesheet" href="./css/3cols.css" media="all">
+			<link rel="stylesheet" href="./css/4cols.css" media="all">
+			<link rel="stylesheet" href="./css/5cols.css" media="all">
+			<link rel="stylesheet" href="./css/6cols.css" media="all">
+			<link rel="stylesheet" href="./css/7cols.css" media="all">
+			<link rel="stylesheet" href="./css/8cols.css" media="all">
+			<link rel="stylesheet" href="./css/9cols.css" media="all">
+			<link rel="stylesheet" href="../css/10cols.css" media="all">
+			<link rel="stylesheet" href="./css/11cols.css" media="all">
+			<link rel="stylesheet" href="./css/12cols.css" media="all">
 
-	<title > My Journal </title>
+		<title > My Journal </title>
 
 	</head>
 
 	<body style="padding-left:5vw;Padding-right:5vw;background-image:url('./pics/beautiful.jpg');background-size:100%">
 
 		<div class="section group">
-		<div class="col span_2_of_2">
-		<nav id="topnav" style="width:100%"> 
+			<div class="col span_2_of_2">
+				<nav id="topnav" style="width:100%"> 
+					<h1 id="title2" style="font-size:6vw;color:white;font-family:Segoe Script;margin-left:1vw;margin-top:vw;padding-left:4vw;padding-top:1.5vw;">
+					<center>MyJournal</center>
+					
+					</h1>
+				</nav>  
 
-		<h1 id="title2" style="font-size:6vw;color:white;font-family:Segoe Script;margin-left:1vw;margin-top:vw;padding-left:4vw;padding-top:1.5vw;">
-		MyJournal</h1>
-		</nav>  
-
+			</div>
 		</div>
-		</div>
 
-		<section id="date" style="font-size:1.5vw;font-family:Segoe Script;color:white;">Date :
-		 </br></section></br>
-		<button id="writePostButton" style ="background-image:url('./pics/write.png');background-size:100%;width:140px;height:140px;border-radius:100px;color:white;"><h1>Write new post</h1></button> </br></br>
-		<button id="readPostButton" style ="background-image:url('./pics/LIKE.png');background-size:100%;width:140px;height:140px;border-radius:100px;color:white;"><h1>Read my posts</h1></button></br>
-		<button class="prettybutton" id="logoutbutton" 
-		style ="background-color:#494d4e;background-size:100%;width:140px;height:140px;border-radius:100px;color:white;border-width:0.85vw;
-		border-color:#dddddd;margin-left:-0.3vw">
-		Log Out</button>
+		<section id="date" style="font-size:1.5vw;font-family:Segoe Script;color:white;">
+			Today is	 </br>
+		</section>
+		</br>
+
+				<button id="writePostButton"
+					style ="background-color:#494d4e;
+							background-size:100%;
+							width:140px;
+							height:140px;
+							border-radius:100px;
+							color:white;
+							border-width:0.85vw;
+							border-color:#dddddd;
+							margin-left:-0.3vw;
+							font-size:3vw">
+							Write</button>
+						</br></br>
+
+				<button id="readPostButton" 
+						style ="background-color:#494d4e;background-size:100%;width:140px;height:140px;
+						border-radius:100px;color:white;border-width:0.85vw;
+						border-color:#dddddd;
+						margin-left:-0.3vw;
+						font-size:3vw">
+						Read </button></br>
+
+				<button class="prettybutton" id="logoutbutton" 
+				style ="background-color:#494d4e;background-size:100%;width:140px;height:140px;
+						border-radius:100px;color:white;border-width:0.85vw;
+						border-color:#dddddd;
+						margin-left:-0.3vw;
+						font-size:3vw">
+						Log Out</button>
 
 
-
-				
-		<section id="readBookSection" style="margin-top:-38vw;margin-left:8vw">
+		<section id="readBookSection" style="margin-top:-35vw;margin-left:8vw;">
 			   <div id="readingbook" >
 			        
-					<div title="first page"  >
-			          <h1>
-			           		<strong> Click right to open and read your entries. </strong>
+					<div title="first page"  style="padding:100px">
+			          <h1 style="color:white;font-size:4vw;font-family:Comic Sans MS;">
+						<center> <strong> Hover right to read! </strong> </center>
 			           </h1>
 			       </div>
 			        
 					
 					<div title="second page">
-			        <div class="section group" style="opacity:0.9">
-						<ul id="postList" style="font-size:1.5vw;font-family:Arial;list-style-type:none;" >
-		                      </ul>
-					
-					</div>
+						<div class="section group" style="opacity:0.9">
+							<ul id="postList" style="font-size:1.5vw;font-family:Arial;list-style-type:none;" >
+								</ul>
+						
+						</div>
 			        </div>
 
 				  <div title="third page">
@@ -77,8 +102,6 @@
 			        </div>
 			       
 				    
-					
-					
 					<div title="fourth page">
 			            <h3></h3>
 			        </div>
@@ -86,44 +109,35 @@
 			   </div>
 			</section>
 
-		<section style="margin-top:-61vw;visibility:hidden;margin-left:8vw" id="writeBookSection">
-			    <div id="writingbook" >
+		<section style="margin-top:-60vw;visibility:hidden;margin-left:8vw" id="writeBookSection">
+			    <div id="writingbook"  >
 			        
-					<div title="first page"  >
-			           <h1>
-			           		<strong> Click right to open and write an entry. </strong>
+					<div title="first page"  style="padding:100px">
+			           <h1 style="color:white;font-size:4vw;font-family:Comic Sans MS" >
+			           	 <center>	<strong> Hover right to write ! </strong> </center>
 			           </h1>
 			        </div>
 			        
 					
 					<div title="second page">
-			       
-						
-						</br></br><h1 style="font-size:3vw;font-family:Arial;">Title</h1> 
+						</br></br>
+						<h1 style="font-size:3vw;font-family:Arial;">Title</h1> 
 						<input type="text" id="title" style="width:96%;font-family:Arial;"></input> </br></br></br>
-						
 						<h1 style="font-size:3vw;font-family:Arial;">Dear Journal,</h1>
 						<textarea type="text" id="entry"  style="width:96%;font-family:Arial;" class="prettyinput">  </textarea>
-					
 					
 			        </div>
 
 				  <div title="third page" style="padding:2vw;margin-top:-3vw">
 				        </br></br>
 			            <textarea type="text"  id="entry2" style="width:96%;font-family:Arial;height:40vw;" class="prettyinput">  </textarea>
-						<button id="save" style="width:96%;font-family:Arial;" >Save </button>
+						<button id="save" style="width:96%;font-family:Arial;"> Save </button>
 			        </div>
 			       
-				    
-					
-					
 					<div title="fourth page">
 			            <h3></h3>
 			        </div>
 			       
-			    
-			
-			
 			</div>
 		</section>
 			
